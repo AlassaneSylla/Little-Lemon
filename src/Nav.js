@@ -1,19 +1,25 @@
+import {Link} from "react-router-dom";
+import logo from "./assets/Logo.svg";
 import './App.css'
 
 function Nav() {
     return (
         <nav>
-            <a href="index.html">
-                <img src="../public/assets/Logo.svg" alt="Logo du site"/>
-            </a>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Reservation</a></li>
-                <li><a href="#">Order Online</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
+             <div className='container'>
+                <div>
+                    <Link to="/">
+                        <img src={logo} alt="Little Lemon logo"/>
+                    </Link>
+                    <ul>
+                        <li><Link className='links' to="/">Home</Link></li>
+                        <li><Link className='links' to="/about">About</Link></li>
+                        <li><Link className='links' to="/menu">Menu</Link></li>
+                        <li><Link className='links' to="/reservation">Reservation</Link></li>
+                        <li><Link className='links' to="/order-online">Order Online</Link></li>
+                        <li><Link className='links' to="/login">Login</Link></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     );
 }

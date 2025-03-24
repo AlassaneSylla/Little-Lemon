@@ -1,38 +1,175 @@
-.App {
-  text-align: center;
+/******** For padding left and right web site ****/
+.container {
+  max-width: 1200px;
+  padding-left: 13rem;
+  padding-right: 13rem;
+  margin: 0 auto;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ /******* Navigation style ********/
+nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding: 0.625rem 0;
+  background-color: #ffffff;
+  box-shadow: rgba(61, 61, 61, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+nav .container {
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+nav .container div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+nav ul {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav ul li .links {
+  font-family: 'Karla', sans-serif;
+  font-size: 0.875rem;
+  font-weight:600;
+  text-transform: uppercase;
+  color: #333333;
+  text-decoration: none;
+}
+nav img {
+  height: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+/****** Hero section *******/
+.hero {
+  position: relative;
+  background-color: #495e57;
+  padding: 1rem 0;
+}
+.hero .container {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  justify-content: space-between;
+  margin: 0 auto;
+  /* gap: 14rem; */
+  gap: clamp(2rem, 8vw, 14rem);
+}
+.hero .container > div {
+  padding: 0;
+}
+.hero .container h1 {
+  margin-bottom: 0rem;
+}
+.hero .restaurantfood {
+  position: relative;
+  bottom: -3.5rem;
+  width: 18.75rem;
+}
+.hero .restaurantfood img {
+  border-radius: 1rem;
+}
+@media (max-width: 1024px) {
+  .hero {
+    position: static;
+    padding: 0;
+  }
+  .hero .container {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    position: static !important;
+  }
+  .hero .container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: top;
+    gap: 0;
+    padding-top: 0 !important;
+    padding-bottom: 1rem !important;
+  }
+  .hero .restaurantfood {
+    position: static;
+    top: 0;
+    width: 100%;
+  }
+  .hero .restaurantfood img {
+    border-radius: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    position: static;
+    padding: 0;
+  }
+  .hero .container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0rem;
+    padding-top: 0 !important;
+    padding-bottom: 1rem !important;
+  }
+  .hero .restaurantfood {
+    position: static;
+    top: 0;
+    width: 100%;
+  }
+  .hero .restaurantfood img {
+    border-radius: 0;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/********* This week special ********/
+.special {
+  padding: 3rem 0;
 }
+.special .container .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+.special .container .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  border: solid 1px orangered;
+}
+
+
+
+
+
