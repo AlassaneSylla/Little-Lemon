@@ -14,7 +14,7 @@ code {
 
 h1 {
   font-family: 'Markazi Text', serif;
-  margin-bottom: 0;
+  margin-bottom: 0.2rem;
   font-size: 4rem;
   font-weight: 500;
   color: #f4ce14;
@@ -28,6 +28,10 @@ h2 {
   font-weight: 500;
   color: #333333;
   /* line-height: 0.6; */
+}
+
+h3 {
+  font-family: 'Markazi Text', serif;
 }
 
 .subtitle {
@@ -55,4 +59,18 @@ h2 {
   font-weight:600;
   cursor: pointer;
   border: none;
+}
+
+.cta-reservation {
+  height: 2.5rem;
+  width: 8.125rem;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  color: #333333;
+  border-radius: 1rem;
+  background-color: #f4ce14;
+  font-weight:600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
 }
