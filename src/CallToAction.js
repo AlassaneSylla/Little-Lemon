@@ -8,7 +8,7 @@ function CallToAction() {
                 <div>
                     <h1>Little Lemon</h1>
                     <p className='subtitle'>Chicago</p>
-                    <p className='lead-text'>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
+                    <p className='lead-text'>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist</p>
                     <p>
                         <a href='/reservation' role='button' className='cta-reservation'>Reserve a Table</a>
                     </p>

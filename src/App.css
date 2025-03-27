@@ -58,6 +58,14 @@ nav ul li .links {
   text-transform: uppercase;
   color: #333333;
   text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+nav ul li .links:hover {
+  background-color: #edefee;
+  color: #f4ce14;
+  padding: 0.65rem;
+  border-radius: 1rem;
+  transform: scale(1.05);
 }
 nav img {
   height: 50px;
@@ -154,7 +162,7 @@ nav img {
 
 /********* This week special ********/
 .special {
-  padding: 3rem 0;
+  padding: 3rem 0 4rem 0;
 }
 .special .container .top {
   display: flex;
@@ -327,6 +335,59 @@ footer .container {
 footer .container .InsideLittleLemon {
   object-fit: cover;
 }
+footer .container .footer-nav ul li{
+  list-style-type: none;
+  margin-left: 0;
+}
+footer .container .footer-nav ul li .links{
+  text-decoration: none;
+  list-style-type: none;
+  color: #ffffff;
+}
+footer .container .footer-nav ul li .links:hover{
+  color: #f4ce14;
+}
+
+/********* Form design **********/
+.form-section {
+  padding: 0 0 4rem 0;
+}
+.form-section .container {
+  display: flex;
+  flex-direction: column;
+}
+.form-section .container .lead-text {
+  color: #333333;
+  font-family: "Karla", sans-serif;
+}
+.form-section .container .rows {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 0.5rem;
+  height: auto;
+  min-height: 4rem;
+  /* border: solid #ee9972 1px; */
+}
+.form-section .container .rows input,
+.form-section .container .rows select {
+  height: 2rem;
+}
+.error-message {
+  min-height: 1.2rem;
+  color: #ee9972;
+  font-size: 0.8rem;
+  visibility: visible;
+}
+.form-section .container .rows button:hover {
+  background-color: #495e57;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+.form-section .container .rows label {
+  color: #495e57;
+}
+
 
 
 

@@ -1,4 +1,5 @@
 import restaurant from './assets/restaurant.jpg';
+import {Link} from "react-router-dom";
 import './App.css'
 
 function Footer() {
@@ -8,15 +9,15 @@ function Footer() {
                 <div className='InsideLittleLemon'>
                     <img src={restaurant} alt='Inside the Little Lemon restaurant' width={190} height={270}/>
                 </div>
-                <div>
+                <div className='footer-nav'>
                     <h4>Doormat Navigation</h4>
                     <ul>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Reservation</li>
-                        <li>Menu</li>
-                        <li>Order Online</li>
-                        <li>Login</li>
+                        <li><Link className='links'  to="/">Home</Link></li>
+                        <li><Link className='links' to="/about">About</Link></li>
+                        <li><Link className='links' to="/menu">Menu</Link></li>
+                        <li><Link className='links' to="/reservation">Reservation</Link></li>
+                        <li><Link className='links' to="/order-online">Order Online</Link></li>
+                        <li><Link className='links' to="/login">Login</Link></li>
                     </ul>
                 </div>
                 <div>
