@@ -1,22 +1,32 @@
+import React, { useReducer } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from './Header';
-import Main from './Main';
-import AboutUs from './AboutUs';
-import BookingForm from './BookingForm';
-import Footer from './Footer';
+import Header from './components/Header';
+import Main from './pages/Main';
+import AboutUs from './components/AboutUs';
+import BookingForm from './pages/BookingForm';
+import Footer from './components/Footer';
+import { initializeTimes, timesReducer } from './utils/utils';
 import './App.css';
 
+
 function App() {
+
+  const [availableTimes, dispatch] = useReducer(timesReducer, [], initializeTimes);
+
+  const updateTimes = (selectedDate) => {
+      console.log("Date selected :", selectedDate);
+      dispatch({ type: "UPDATE_TIMES", date: selectedDate });
+  };
   return (
     <>
       <Router>
-        <Header/>
+        <Header />
         <Routes>
-          <Route path='/' element={<Main/>}></Route>
-          <Route path='/about' element={<AboutUs/>}></Route>
-          <Route path='/Reservation' element={<BookingForm/>}></Route>
+          <Route path='/' element={<Main />}></Route>
+          <Route path='/about' element={<AboutUs />}></Route>
+          <Route path='/Reservation' element={<BookingForm availableTimes={availableTimes} updateTimes={ updateTimes } />}></Route>
         </Routes>
-        <Footer/>
+        <Footer />
       </Router>
     </>
   );

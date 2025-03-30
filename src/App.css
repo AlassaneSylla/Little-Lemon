@@ -379,6 +379,9 @@ footer .container .footer-nav ul li .links:hover{
   font-size: 0.8rem;
   visibility: visible;
 }
+.form-section .container .rows button {
+  width: auto;
+}
 .form-section .container .rows button:hover {
   background-color: #495e57;
   color: #ffffff;

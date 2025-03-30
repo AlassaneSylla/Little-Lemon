@@ -1,6 +1,6 @@
-import chefs from './assets/Mario and Adrian A.jpg';
-import chefMarco from './assets/restaurant chef B.jpg';
-import './App.css';
+import chefs from '../assets/Mario and Adrian A.jpg';
+import chefMarco from '../assets/restaurant chef B.jpg';
+import '../App.css';
 
 function AboutUs() {
     return (

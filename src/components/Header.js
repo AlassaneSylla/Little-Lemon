@@ -1,11 +1,10 @@
 import Nav from './Nav';
-
-import './App.css'
+import '../App.css'
 
 function Header() {
     return (
         <header>
-            <Nav/>
+            <Nav />
         </header>
     );
 }
