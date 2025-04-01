@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import BookingForm from '../src/pages/BookingForm';
-import { initializeTimes, timesReducer } from './utils/utils';
+import { initializeTimes, timesReducer } from './utils/api';
 
 
 test('Renders the BookingForm heading', () => {

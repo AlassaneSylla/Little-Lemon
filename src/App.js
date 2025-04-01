@@ -5,7 +5,7 @@ import Main from './pages/Main';
 import AboutUs from './components/AboutUs';
 import BookingForm from './pages/BookingForm';
 import Footer from './components/Footer';
-import { initializeTimes, timesReducer } from './utils/utils';
+import { initializeTimes, timesReducer } from './utils/api';
 import './App.css';
 
 
@@ -14,9 +14,10 @@ function App() {
   const [availableTimes, dispatch] = useReducer(timesReducer, [], initializeTimes);
 
   const updateTimes = (selectedDate) => {
-      console.log("Date selected :", selectedDate);
-      dispatch({ type: "UPDATE_TIMES", date: selectedDate });
+    dispatch({ type: "UPDATE_TIMES", date: selectedDate });
+    console.log("Date selected :", selectedDate);
   };
+
   return (
     <>
       <Router>

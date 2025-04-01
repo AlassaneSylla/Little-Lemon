@@ -1,6 +1,7 @@
 import React from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
+import { submitAPI } from '../utils/api';
 import '../App.css';
 
 
@@ -22,8 +23,15 @@ function BookingForm({ availableTimes, updateTimes }) {
           occasion: Yup.string().required("the occasion required"),
       }),
       onSubmit: (values, { resetForm }) => {
-          console.log("Reservation sent :", values);
+        console.log("Reservation sent :", values)
+        const bookDetails = submitAPI(values)
+        if (bookDetails) {
+          console.log('Booking submitted successfully');
           resetForm();
+        }
+        else {
+          console.error("There was an error submitting the booking");
+        }
       },
   });
 
@@ -44,7 +52,7 @@ function BookingForm({ availableTimes, updateTimes }) {
                         value={formik.values.date}
                         onChange={ (e) => {
                           formik.handleChange(e);
-                          updateTimes(e.target.value); //to change the time of the day when the date change
+                          updateTimes(e.target.value);
                         }}
                         onBlur={formik.handleBlur}
                       />
