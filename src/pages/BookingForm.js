@@ -64,6 +64,7 @@ function BookingForm({ availableTimes, updateTimes, addBooking, bookedTimes }) {
                           updateTimes(e.target.value);
                         }}
                         onBlur={formik.handleBlur}
+                        required
                       />
                       <span className="error-message">
                         {formik.touched.date && formik.errors.date ? formik.errors.date : null}
@@ -101,6 +102,7 @@ function BookingForm({ availableTimes, updateTimes, addBooking, bookedTimes }) {
                         value={formik.values.guests}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
+                        required
                       />
                       <span className='error-message'>
                         {formik.touched.guests && formik.errors.guests ? formik.errors.guests : null}
@@ -125,7 +127,13 @@ function BookingForm({ availableTimes, updateTimes, addBooking, bookedTimes }) {
                       </span>
                     </div>
                     <div className='rows'>
-                      <button className="cta-reservation" type="submit">Make Your reservation</button>
+                      <button 
+                      className="cta-reservation" 
+                      type="submit"
+                      disabled={!(formik.isValid && formik.dirty)}
+                      >
+                        Make Your reservation
+                      </button>
                     </div>
             </form>
         </div>

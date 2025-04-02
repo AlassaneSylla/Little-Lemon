@@ -6,7 +6,7 @@ import { initializeTimes, timesReducer } from './utils/api';
 test('Renders the BookingForm heading', () => {
 
   const mockAvailableTimes = ["12:00", "13:00", "14:00"];
-  const mockUpdateTimes = jest.fn(); 
+  const mockUpdateTimes = jest.fn();
 
   render(<BookingForm availableTimes={mockAvailableTimes} updateTimes={mockUpdateTimes} />);
   const headingElement = screen.getByText("Book Now");
