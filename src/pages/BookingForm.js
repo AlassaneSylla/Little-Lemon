@@ -5,7 +5,7 @@ import { submitAPI } from '../utils/api';
 import '../App.css';
 
 
-function BookingForm({ availableTimes, updateTimes }) {
+function BookingForm({ availableTimes, updateTimes, addBooking, bookedTimes }) {
   const formik = useFormik({
       initialValues: {
           date: "",
@@ -23,18 +23,20 @@ function BookingForm({ availableTimes, updateTimes }) {
           occasion: Yup.string().required("the occasion required"),
       }),
       onSubmit: (values, { resetForm }) => {
-        console.log("Reservation sent :", values)
-        const bookDetails = submitAPI(values)
+        console.log("Reservation sent :", values);
+        const bookDetails = submitAPI(values);
         if (bookDetails) {
+          addBooking(values.date, values.time);
           console.log('Booking submitted successfully');
           resetForm();
-        }
-        else {
-          console.error("There was an error submitting the booking");
+        } else {
+          console.error("Error submitting the booking");
         }
       },
   });
-
+  const filteredTimes = availableTimes.filter(time =>
+    !(bookedTimes[formik.values.date] || []).includes(time)
+  );
   return (
     <section className="form-section">
         <div className='container'>
@@ -69,9 +71,13 @@ function BookingForm({ availableTimes, updateTimes }) {
                         onBlur={formik.handleBlur}
                       >
                         <option value="" disabled>-- : --</option>
+                        {filteredTimes.map((time, index) => (
+                          <option key={index} value={time}>{time}</option>
+                        ))}
+                        {/* <option value="" disabled>-- : --</option>
                           {availableTimes.map((time, index) => (
                               <option key={index} value={time}>{time}</option>
-                          ))}
+                          ))} */}
                       </select>
                       <span className='error-message'>
                         {formik.touched.time && formik.errors.time ? formik.errors.time : null}

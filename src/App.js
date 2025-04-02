@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from './components/Header';
 import Main from './pages/Main';
@@ -12,15 +12,22 @@ import './App.css';
 function App() {
 
   const [availableTimes, dispatch] = useReducer(timesReducer, [], initializeTimes);
+  const [bookedTimes, setBookedTimes] = useState({});
 
   const updateTimes = (selectedDate) => {
     dispatch({ type: "UPDATE_TIMES", date: selectedDate });
-    console.log("Date selected :", selectedDate);
+  };
+
+  const addBooking = (date, time) => {
+    setBookedTimes(prev => ({
+      ...prev,
+      [date]: [...(prev[date] || []), time]
+    }));
   };
 
   return (
     <>
-      <Router>
+      {/* <Router>
         <Header />
         <Routes>
           <Route path='/' element={<Main />}></Route>
@@ -28,7 +35,16 @@ function App() {
           <Route path='/Reservation' element={<BookingForm availableTimes={availableTimes} updateTimes={ updateTimes } />}></Route>
         </Routes>
         <Footer />
-      </Router>
+      </Router> */}
+      <Router>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Main />}></Route>
+        <Route path='/about' element={<AboutUs />}></Route>
+        <Route path='/Reservation' element={<BookingForm availableTimes={availableTimes} updateTimes={updateTimes} addBooking={addBooking} bookedTimes={bookedTimes} />} />
+      </Routes>
+      <Footer />
+    </Router>
     </>
   );
 }
