@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 import restaurantfood from '../assets/restauranfood.jpg';
 import '../App.css'
 
@@ -10,7 +11,7 @@ function CallToAction() {
                     <p className='subtitle'>Chicago</p>
                     <p className='lead-text'>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist</p>
                     <p>
-                        <a href='/reservation' role='button' className='cta-reservation'>Reserve a Table</a>
+                        <Link to="/reservation" role="button" className="cta-reservation">Reserve a Table</Link>
                     </p>
                 </div>
                 <div className='restaurantfood'>

@@ -5,6 +5,7 @@ import Main from './pages/Main';
 import AboutUs from './components/AboutUs';
 import BookingForm from './pages/BookingForm';
 import Footer from './components/Footer';
+import ConfirmedBooking  from './components/ConfirmedBooking';
 import { initializeTimes, timesReducer } from './utils/api';
 import './App.css';
 
@@ -27,24 +28,16 @@ function App() {
 
   return (
     <>
-      {/* <Router>
+      <Router>
         <Header />
         <Routes>
           <Route path='/' element={<Main />}></Route>
           <Route path='/about' element={<AboutUs />}></Route>
-          <Route path='/Reservation' element={<BookingForm availableTimes={availableTimes} updateTimes={ updateTimes } />}></Route>
+          <Route path='/confirmation' element={<ConfirmedBooking/>}></Route>
+          <Route path='/reservation' element={<BookingForm availableTimes={availableTimes} updateTimes={updateTimes} addBooking={addBooking} bookedTimes={bookedTimes} />} />
         </Routes>
         <Footer />
-      </Router> */}
-      <Router>
-      <Header />
-      <Routes>
-        <Route path='/' element={<Main />}></Route>
-        <Route path='/about' element={<AboutUs />}></Route>
-        <Route path='/Reservation' element={<BookingForm availableTimes={availableTimes} updateTimes={updateTimes} addBooking={addBooking} bookedTimes={bookedTimes} />} />
-      </Routes>
-      <Footer />
-    </Router>
+      </Router>
     </>
   );
 }

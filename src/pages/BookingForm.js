@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
@@ -6,6 +7,9 @@ import '../App.css';
 
 
 function BookingForm({ availableTimes, updateTimes, addBooking, bookedTimes }) {
+
+  const confirmation = useNavigate();
+
   const formik = useFormik({
       initialValues: {
           date: "",
@@ -29,14 +33,17 @@ function BookingForm({ availableTimes, updateTimes, addBooking, bookedTimes }) {
           addBooking(values.date, values.time);
           console.log('Booking submitted successfully');
           resetForm();
+          confirmation('/confirmation');
         } else {
           console.error("Error submitting the booking");
         }
       },
   });
+
   const filteredTimes = availableTimes.filter(time =>
     !(bookedTimes[formik.values.date] || []).includes(time)
   );
+
   return (
     <section className="form-section">
         <div className='container'>

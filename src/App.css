@@ -391,7 +391,18 @@ footer .container .footer-nav ul li .links:hover{
   color: #495e57;
 }
 
-
+/********** ConfirmedBooking ****************/
+.confirmation-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+.confirm-logo {
+  margin: 2rem 0;
+}
 
 
 
