@@ -347,6 +347,14 @@ footer .container .footer-nav ul li .links{
 footer .container .footer-nav ul li .links:hover{
   color: #f4ce14;
 }
+.social-links {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+}
+.social {
+  color: #ffffff;
+}
 
 /********* Form design **********/
 .form-section {

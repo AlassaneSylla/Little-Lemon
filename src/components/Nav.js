@@ -4,13 +4,13 @@ import '../App.css'
 
 function Nav() {
     return (
-        <nav>
+        <nav className="navbar" aria-label="Main navigation">
              <div className='container'>
                 <div>
                     <Link to="/">
                         <img src={logo} alt="Little Lemon logo"/>
                     </Link>
-                    <ul>
+                    <ul className="nav-menu" id="nav-menu">
                         <li><Link className='links' to="/">Home</Link></li>
                         <li><Link className='links' to="/about">About</Link></li>
                         <li><Link className='links' to="/menu">Menu</Link></li>

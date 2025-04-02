@@ -48,11 +48,15 @@ function BookingForm({ availableTimes, updateTimes, addBooking, bookedTimes }) {
     <section className="form-section">
         <div className='container'>
             <div>
-                <h1>Book Now</h1>
-                <p className='lead-text'>Please fill in the form to reserve a table.</p>
+                <h1 id="form-title">Book Now</h1>
+                <p className='lead-text' id="form-description">Please fill in the form to reserve a table.</p>
             </div>
             <div>
-                <form onSubmit={formik.handleSubmit}>
+                <form
+                  onSubmit={formik.handleSubmit}
+                  aria-labelledby="form-title"
+                  aria-describedby="form-description"
+                >
                     <div className='rows'>
                       <label>Choose date</label>
                       <input
@@ -127,8 +131,8 @@ function BookingForm({ availableTimes, updateTimes, addBooking, bookedTimes }) {
                       </span>
                     </div>
                     <div className='rows'>
-                      <button 
-                      className="cta-reservation" 
+                      <button
+                      className="cta-reservation"
                       type="submit"
                       disabled={!(formik.isValid && formik.dirty)}
                       >
