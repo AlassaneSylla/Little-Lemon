@@ -2,8 +2,8 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import { submitAPI } from '../utils/api';
-import '../App.css';
+import { submitAPI } from '../../utils/api';
+import '../../App.css';
 
 
 function BookingForm({ availableTimes, updateTimes, addBooking, bookedTimes }) {

@@ -1,8 +1,8 @@
-import Card from '../components/Card';
-import greek from '../assets/greek salad.jpg';
-import bruchetta from '../assets/bruchetta.svg';
-import dessert from '../assets/lemon dessert.jpg';
-import '../App.css';
+import Card from '../../components/Card';
+import greek from '../../assets/greek salad.jpg';
+import bruchetta from '../../assets/bruchetta.svg';
+import dessert from '../../assets/lemon dessert.jpg';
+import '../../App.css';
 
 function Specials() {
     return (

@@ -1,6 +1,6 @@
 import CallToAction from '../components/CallToAction';
-import Specials from '../components/Specials';
-import CustomersSay from '../components/CustomersSay';
+import Specials from '../features/specials/Specials';
+import CustomersSay from '../features/testimonials/CustomersSay';
 import AboutUs from '../components/AboutUs';
 import '../App.css';
 

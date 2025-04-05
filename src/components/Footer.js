@@ -1,4 +1,4 @@
-import restaurant from '../assets/restaurant.jpg';
+import whiteLogo from '../assets/Logo_white.svg';
 import {Link} from "react-router-dom";
 import '../App.css';
 
@@ -8,17 +8,17 @@ function Footer() {
             <div className='container'>
                 <div className='InsideLittleLemon'>
                     <img
-                        src={restaurant}
+                        src={whiteLogo}
                         alt='Inside the Little Lemon restaurant'
-                        width='auto'
-                        height={140}
+                        width={120}
+                        height='auto'
                     />
                 </div>
                 <div className="footer-nav" aria-label="Footer navigation">
                     <h4 id="nav-title">Doormat Navigation</h4>
                     <ul aria-labelledby="nav-title">
-                        <li><Link className='links'  to="/">Home</Link></li>
-                        <li><Link className='links' to="/about">About</Link></li>
+                        <li><a className='links'  href="#navbar">Home</a></li>
+                        <li><a className='links' href="#about">About</a></li>
                         <li><Link className='links' to="/menu">Menu</Link></li>
                         <li><Link className='links' to="/reservation">Reservation</Link></li>
                         <li><Link className='links' to="/order-online">Order Online</Link></li>

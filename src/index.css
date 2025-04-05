@@ -82,5 +82,8 @@ h3 {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .cta-reservation:hover {
+  background-color: #495e57;
+  color: #ffffff;
   transform: scale(1.05);
+  border: solid #ffffff 0.3px;
 }

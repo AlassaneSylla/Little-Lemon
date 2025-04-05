@@ -1,4 +1,5 @@
 import '../App.css'
+import cyclist from '../assets/cyclist.png';
 
 function Card({image, title, price, description}) {
     return (
@@ -17,7 +18,7 @@ function Card({image, title, price, description}) {
                     <p className='price' aria-label={`Price: ${price}`}>{price}</p>
                 </div>
                 <p id={`card-description-${title}`} className='description'>{description}</p>
-                <p aria-label={`Order a delivery for ${title}`} className='footer'>Order a delevery</p>
+                <p aria-label={`Order a delivery for ${title}`} className='footer'>Order a delevery <img src={cyclist} alt='delivrer logo'/></p>
             </div>
         </div>
     );
